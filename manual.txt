@@ -1,0 +1,12 @@
+$ sh build
+
+Add files from bulkReady
+Add files from manualBulkReady
+
+Add part of speech limits for prefixes and suffixes
+
+Create/update aa as copular verb
+
+fix "thrennaiad, ul","adj.","mournful"
+
+Fix words that are in other/invalidAdjectives.csv
