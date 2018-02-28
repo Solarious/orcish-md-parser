@@ -35,8 +35,6 @@ split --lines='400' -a 1 --numeric-suffixes=1 --additional-suffix=.csv bulkReady
 
 cat output/all.csv | grep -o -E '^"[^"]+"' | sort | uniq -d > output/duplicateNames.csv
 cat output/all.csv | grep -f output/duplicateNames.csv > output/duplicates.csv
-cat output/rawAll.csv | grep -E '^"[^"]+","adj."' | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectivesRaw.csv
-cat output/all.csv | grep -E '^"[^"]+","adj."' | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectives.csv
 
 cat output/all.csv | perl scripts/uniques.pl | sort | uniq -c > output/posCounts.txt
 

@@ -62,3 +62,7 @@ echo
 
 echo "Invalid verbs:"
 cat $1 | grep -E '^"[^"]+","[v]."' | grep -Ev '^"[^"]+(a|ai)"'
+echo
+
+echo "Invalid Adjectives:"
+cat $1 | grep -E '^"[^"]+","adj."' | grep -v '^"[^"]*,[^"]*"'

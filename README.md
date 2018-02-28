@@ -22,8 +22,6 @@ Files/directories in **bold** need to be supplied by the user. Files/directories
   * *duplicates.csv* - List of words that share their their orcish with another word
   * *exceptions.txt* - List of words with incorrect endings/genders in *all.csv*
   * *exceptionsRaw.txt* - List of words with incorrect endings/genders in *rawAll.csv*
-  * *invalidAdjectives.csv* - List of invalid adjectives (no space or ",") in *all.csv*
-  * *invalidAdjectives.csv* - List of invalid adjectives (no space or ",") in *rawAll.csv*
   * *options.txt* - List of words with invalid options (e.g. "n.a.c.b" instead of "n.a.c.b.")
   * *otherPronouns.csv* - List of demonstrative, possessive and relative pronouns
   * *posCounts.txt* - List occurences for each part of speech
