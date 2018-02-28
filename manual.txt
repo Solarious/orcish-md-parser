@@ -9,4 +9,4 @@ Create/update aa as copular verb
 
 fix "thrennaiad, ul","adj.","mournful"
 
-Fix words that are in other/invalidAdjectives.csv
+Fix words that are in output/invalidAdjectives.csv

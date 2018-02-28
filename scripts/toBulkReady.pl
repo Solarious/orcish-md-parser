@@ -7,11 +7,11 @@ open (my $fhAdverb, ">", "bulkReady/adverb.csv") or die "Failed to open bulkRead
 open (my $fhOther, ">", "bulkReady/other.csv") or die "Failed to open bulkReady/other.csv: $!";
 open (my $fhCardinal, ">", "bulkReady/cardinal.csv") or die "Failed to open bulkReady/cardinal.csv: $!";
 open (my $fhConjunction, ">", "bulkReady/conjunction.csv") or die "Failed to open bulkReady/conjunction.csv: $!";
-open (my $fhOtherPronouns, ">", "other/otherPronouns.csv") or die "Failed to open other/otherPronouns.csv: $!";
+open (my $fhOtherPronouns, ">", "output/otherPronouns.csv") or die "Failed to open other/otherPronouns.csv: $!";
 open (my $fhExclamation, ">", "bulkReady/exclamation.csv") or die "Failed to open bulkReady/exclamation.csv: $!";
 open (my $fhNoun, ">", "bulkReady/noun.csv") or die "Failed to open bulkReady/noun.csv: $!";
 open (my $fhPreposition, ">", "bulkReady/preposition.csv") or die "Failed to open bulkReady/preposition.csv: $!";
-open (my $fhPronoun, ">", "other/pronoun.csv") or die "Failed to open other/pronoun.csv: $!";
+open (my $fhPronoun, ">", "output/pronoun.csv") or die "Failed to open other/pronoun.csv: $!";
 open (my $fhVerb, ">", "bulkReady/verb.csv") or die "Failed to open bulkReady/verb.csv: $!";
 open (my $fhAffix, ">", "bulkReady/affix.csv") or die "Failed to open bulkReady/affix.csv: $!";
 

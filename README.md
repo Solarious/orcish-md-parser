@@ -2,7 +2,7 @@
 A bunch of scripts that converts the orcish dictionary from markdown format to csv format, performs data cleaning, and splits the output into separate file ready to be bulkadded
 ## Files
 Files/directories in **bold** need to be supplied by the user. Files/directories in *italics* are created by build.sh
-* build.sh - Script that builds all the files in *other* and *toBulkReady* from **OrcishWords.md**
+* build.sh - Script that builds all the files in *output* and *toBulkReady* from **OrcishWords.md**
 * manual.txt - Contains instructions for uploading data to Orc-dict
 * **OrcishWords.md**
 * stop\_words\_english.txt
@@ -15,7 +15,7 @@ Files/directories in **bold** need to be supplied by the user. Files/directories
   * ei.csv - List of improvements for words with long english values
   * pos.csv - List of fixes for incorrect part of speech values
 * manualBulkReady - Contains premade csv files for uploading to Orc-dict using bulkadd. Used for words that can not be generated from **OrcishWords.md**
-* *other* - Contains files created by build.sh that are not bulkadd files
+* *output* - Contains files created by build.sh that are not bulkadd files
   * *all.csv* - Contains all the words in csv format
   * *duplicateNames.csv* - List of orcish values that appear in multiple words
   * *duplicates.csv* - List of words that share their their orcish with another word

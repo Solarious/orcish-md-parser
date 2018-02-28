@@ -4,7 +4,7 @@ mkdir -p bulkReady
 mkdir -p bulkReady/adjectives
 mkdir -p bulkReady/nouns
 mkdir -p bulkReady/verbs
-mkdir -p other
+mkdir -p output
 
 cat OrcishWords.md |\
 perl scripts/removeEmptyLines.pl |\
@@ -23,22 +23,22 @@ perl scripts/fixDfInEng.pl |\
 perl scripts/fixOpTypos.pl |\
 perl scripts/fixOptions.pl |\
 perl scripts/fixPosTypos.pl |\
-sort -u > other/all.csv
+sort -u > output/all.csv
 
-cat other/all.csv | perl scripts/toBulkReady.pl
+cat output/all.csv | perl scripts/toBulkReady.pl
 
 split --lines='400' -a 1 --numeric-suffixes=1 --additional-suffix=.csv bulkReady/verb.csv bulkReady/verbs/verb
 split --lines='400' -a 1 --numeric-suffixes=1 --additional-suffix=.csv bulkReady/noun.csv bulkReady/nouns/noun
 split --lines='400' -a 1 --numeric-suffixes=1 --additional-suffix=.csv bulkReady/adjective.csv bulkReady/adjectives/adjective
 
-cat other/all.csv | grep -o -E '^"[^"]+"' | sort | uniq -d > other/duplicateNames.csv
-cat other/all.csv | grep -f other/duplicateNames.csv > other/duplicates.csv
-cat bulkReady/adjective.csv | grep -v '^"[^"]*,[^"]*"' > other/invalidAdjectives.csv
+cat output/all.csv | grep -o -E '^"[^"]+"' | sort | uniq -d > output/duplicateNames.csv
+cat output/all.csv | grep -f output/duplicateNames.csv > output/duplicates.csv
+cat bulkReady/adjective.csv | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectives.csv
 
-cat other/all.csv | perl scripts/uniques.pl | sort | uniq -c > other/posCounts.txt
+cat output/all.csv | perl scripts/uniques.pl | sort | uniq -c > output/posCounts.txt
 
-cat other/all.csv | perl scripts/checkOptions.pl > other/options.txt
+cat output/all.csv | perl scripts/checkOptions.pl > output/options.txt
 
-cat other/all.csv | perl scripts/sortByEngLen.pl > other/sortedByEngLen.txt
+cat output/all.csv | perl scripts/sortByEngLen.pl > output/sortedByEngLen.txt
 
-sh scripts/findExceptions.sh > other/exceptions.txt
+sh scripts/findExceptions.sh > output/exceptions.txt
