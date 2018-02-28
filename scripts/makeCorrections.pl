@@ -20,6 +20,9 @@ while (<>) {
 	my $rest = $4;
 	my $ei = "";
 	for my $mistakeLine (@posMistakes) {
+		if ($mistakeLine =~ /(^#|^\s*$)/) {
+			next;
+		}
 		$mistakeLine =~ /^"([^"]+)","([^"]+)","([^"]+)"/;
 		my $origOrcish = $1;
 		my $origPoS = $2;
