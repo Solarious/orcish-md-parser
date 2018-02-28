@@ -23,6 +23,7 @@ perl scripts/fixDfInEng.pl |\
 perl scripts/fixOpTypos.pl |\
 perl scripts/fixOptions.pl |\
 perl scripts/fixPosTypos.pl |\
+perl scripts/fixAdjMissingComma.pl |\
 sort -u > output/rawAll.csv
 
 cat output/rawAll.csv | perl scripts/makeCorrections.pl > output/all.csv
