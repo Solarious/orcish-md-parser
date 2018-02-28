@@ -45,3 +45,5 @@ cat output/all.csv | perl scripts/sortByEngLen.pl > output/sortedByEngLen.txt
 
 sh scripts/findExceptions.sh output/rawAll.csv > output/exceptionsRaw.txt
 sh scripts/findExceptions.sh output/all.csv > output/exceptions.txt
+
+./scripts/getFixChanges.sh > output/fixChanges.txt
