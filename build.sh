@@ -23,7 +23,9 @@ perl scripts/fixDfInEng.pl |\
 perl scripts/fixOpTypos.pl |\
 perl scripts/fixOptions.pl |\
 perl scripts/fixPosTypos.pl |\
-sort -u > output/all.csv
+sort -u > output/rawAll.csv
+
+cat output/rawAll.csv | perl scripts/makeCorrections.pl > output/all.csv
 
 cat output/all.csv | perl scripts/toBulkReady.pl
 
@@ -33,7 +35,8 @@ split --lines='400' -a 1 --numeric-suffixes=1 --additional-suffix=.csv bulkReady
 
 cat output/all.csv | grep -o -E '^"[^"]+"' | sort | uniq -d > output/duplicateNames.csv
 cat output/all.csv | grep -f output/duplicateNames.csv > output/duplicates.csv
-cat bulkReady/adjective.csv | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectives.csv
+cat output/rawAll.csv | grep -E '^"[^"]+","adj."' | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectivesRaw.csv
+cat output/all.csv | grep -E '^"[^"]+","adj."' | grep -v '^"[^"]*,[^"]*"' > output/invalidAdjectives.csv
 
 cat output/all.csv | perl scripts/uniques.pl | sort | uniq -c > output/posCounts.txt
 
@@ -41,4 +44,5 @@ cat output/all.csv | perl scripts/checkOptions.pl > output/options.txt
 
 cat output/all.csv | perl scripts/sortByEngLen.pl > output/sortedByEngLen.txt
 
-sh scripts/findExceptions.sh > output/exceptions.txt
+sh scripts/findExceptions.sh output/rawAll.csv > output/exceptionsRaw.txt
+sh scripts/findExceptions.sh output/all.csv > output/exceptions.txt

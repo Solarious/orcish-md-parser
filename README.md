@@ -16,11 +16,14 @@ Files/directories in **bold** need to be supplied by the user. Files/directories
   * pos.csv - List of fixes for incorrect part of speech values
 * manualBulkReady - Contains premade csv files for uploading to Orc-dict using bulkadd. Used for words that can not be generated from **OrcishWords.md**
 * *output* - Contains files created by build.sh that are not bulkadd files
-  * *all.csv* - Contains all the words in csv format
+  * *all.csv* - Contains all the words in csv format, after corrections are make with scripts/makeCorrections.pl
+  * *rawAll.csv* - Contains all the words in csv format, before corrections are make with scripts/makeCorrections.pl
   * *duplicateNames.csv* - List of orcish values that appear in multiple words
   * *duplicates.csv* - List of words that share their their orcish with another word
-  * *exceptions.txt* - List of words with incorrect endings/genders
-  * *invalidAdjectives.csv* - List of invalid adjectives (no space or ","),
+  * *exceptions.txt* - List of words with incorrect endings/genders in *all.csv*
+  * *exceptionsRaw.txt* - List of words with incorrect endings/genders in *rawAll.csv*
+  * *invalidAdjectives.csv* - List of invalid adjectives (no space or ",") in *all.csv*
+  * *invalidAdjectives.csv* - List of invalid adjectives (no space or ",") in *rawAll.csv*
   * *options.txt* - List of words with invalid options (e.g. "n.a.c.b" instead of "n.a.c.b.")
   * *otherPronouns.csv* - List of demonstrative, possessive and relative pronouns
   * *posCounts.txt* - List occurences for each part of speech
