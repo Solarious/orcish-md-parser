@@ -5,7 +5,7 @@ prev=$(cat OrcishWords.md | perl scripts/removeEmptyLines.pl | perl scripts/remo
 SCRIPT_NAMES="fixDoublePos fixPrepositions fixVulg fixPej fixExcl fixDfInEng fixOpTypos fixOptions fixPosTypos fixAdjMissingComma"
 
 for NAME in ${SCRIPT_NAMES}; do
-	echo "------------${NAME}.pl:------------"
+	echo "#------------${NAME}.pl:------------"
 	next=$(echo "$prev" | perl scripts/${NAME}.pl)
 	diff <(echo "$prev") <(echo "$next")
 	echo
