@@ -16,6 +16,7 @@ Files/directories in **bold** need to be supplied by the user. Files/directories
   * pos.csv - List of fixes for incorrect part of speech values
 * manualBulkReady - Contains premade csv files for uploading to Orc-dict using bulkadd. Used for words that can not be generated from **OrcishWords.md**
 * *output* - Contains files created by build.sh that are not bulkadd files
+  * *adjTypes.txt* - List occurences for each adjective ending
   * *all.csv* - Contains all the words in csv format, after corrections are make with scripts/makeCorrections.pl
   * *rawAll.csv* - Contains all the words in csv format, before corrections are make with scripts/makeCorrections.pl
   * *duplicateNames.csv* - List of orcish values that appear in multiple words

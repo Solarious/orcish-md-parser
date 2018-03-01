@@ -47,3 +47,5 @@ cat output/all.csv | perl scripts/sortByEngLen.pl > output/sortedByEngLen.txt
 ./scripts/findExceptions.sh output/all.csv > output/exceptions.txt
 
 ./scripts/getFixChanges.sh > output/fixChanges.diff
+
+cat bulkReady/adjective.csv | perl scripts/getAdjType.pl | sort | uniq -c > output/adjTypes.txt
